@@ -17,7 +17,7 @@ $(document).ready( () => {
 });
 
 function BuildApiString() {
-    return `https://developers.google.com/civic-information/docs/v2/representatives/representativeInfoByAddress?key=AIzaSyDOoCjpX2_v8KmJonjuQHLwCLxBCk8MNK4&address=`
+    return `https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyDOoCjpX2_v8KmJonjuQHLwCLxBCk8MNK4&address=`
     + `{"${$("#address").val()} ${$("#city").val()} ${$("#state").value} ${$("#zip").val()}"`
     + `,"includeOffices":true, "roles":["legislatorLowerBody","legislatorUpperBody"]}`; 
 }
