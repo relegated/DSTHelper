@@ -13,7 +13,7 @@ $(document).ready( () => {
         else {
             $("submitButton").prop("disabled", true);
         }
-    })
+    });
 });
 
 function BuildApiString() {
