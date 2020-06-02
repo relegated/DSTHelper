@@ -5,6 +5,14 @@ $(document).ready( () => {
                 $("federalOfficers").html(GetOfficerHTML(official));
             });
         })
+    });
+    $("address").change( () => {
+        if ($("address").val().length > 0){
+            $("submitButton").prop("disabled", false);
+        }
+        else {
+            $("submitButton").prop("disabled", true);
+        }
     })
 });
 
