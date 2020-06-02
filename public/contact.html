@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Your Representatives</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="contact.js"></script>
+</head>
+
+<body>
+    <h1>Contact Your Representatives</h1>
+    <h2>Daylight Saving Time is affected in each state by two groups:
+        <ol>
+            <li>United States Congress (currently mandates states either switch twice a year, or stick with Standard
+                time)</li>
+            <li>State Congress (can elect to switch to standard time, or join national efforts to make DST permanent)
+            </li>
+        </ol>
+    </h2>
+    <h3>Let your representatives know that you want to stop switching back and forth</h3>
+
+    <label for="address">Address: </label>
+    <input type="text" name="address" id="address"><br>
+    <label for="city">City: </label>
+    <input type="text" name="city" id="city"><br>
+    <label for="state">State: </label>
+    <input type="text" name="state" id="state"><br>
+    <label for="zip">Zip: </label>
+    <input type="number" name="zip" id="zip"><br>
+    <button disabled="disabled" id="submitButton">Submit</button>
+
+    <p id="federalOfficers"></p>
+
+</body>
+
+</html>
