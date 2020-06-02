@@ -6,7 +6,7 @@ $(document).ready( () => {
             });
         })
     });
-    $("address").change( () => {
+    $("address").on("input", () => {
         if ($("address").val().length > 0){
             $("submitButton").prop("disabled", false);
         }
