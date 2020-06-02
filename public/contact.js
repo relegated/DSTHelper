@@ -1,24 +1,24 @@
 $(document).ready( () => {
-    $("submitButton").click( () => {
+    $("#submitButton").click( () => {
         $.get(BuildApiString(), (data, status) => {
             data.officials.forEach(official => {
-                $("federalOfficers").html(GetOfficerHTML(official));
+                $("#federalOfficers").html(GetOfficerHTML(official));
             });
         })
     });
-    $("address").on("input", () => {
-        if ($("address").val().length > 0){
-            $("submitButton").prop("disabled", false);
+    $("#address").on("input", () => {
+        if ($("#address").val().length > 0){
+            $("#submitButton").prop("disabled", false);
         }
         else {
-            $("submitButton").prop("disabled", true);
+            $("#submitButton").prop("disabled", true);
         }
     });
 });
 
 function BuildApiString() {
     return `https://developers.google.com/civic-information/docs/v2/representatives/representativeInfoByAddress?apix_params=`
-    + `{"${$("address").val()} ${$("city").val()} ${$("state").value} ${$("zip").val()}"`
+    + `{"${$("#address").val()} ${$("#city").val()} ${$("#state").value} ${$("#zip").val()}"`
     + `,"includeOffices":true, "roles":["legislatorLowerBody","legislatorUpperBody"]}`; 
 }
 
