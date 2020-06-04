@@ -30,7 +30,7 @@ function GetOfficerHTML(official) {
     let returnHTML = `<div>Name:<br>${official.name} <br>URLS:<br>`;
     if (official.urls != null){
         official.urls.forEach(url => {
-            returnHTML += `<a href="${url}>${url}</a>`;
+            returnHTML += `<a href="${url}">${url}</a>`;
         });
     }
     
@@ -45,10 +45,10 @@ function GetOfficerHTML(official) {
     if (official.channels != null) {
         official.channels.forEach(channel => {
             if (channel.type == "Facebook"){
-                returnHTML += `<a href="https://facebook.com/${channel.id}>Facebook</a><br>`;
+                returnHTML += `<a href="https://facebook.com/${channel.id}">Facebook</a><br>`;
             }
             else if (channel.type == "Twitter"){
-                returnHTML += `<a href="https://twitter.com/${channel.id}>Twitter</a><br>`;
+                returnHTML += `<a href="https://twitter.com/${channel.id}">Twitter</a><br>`;
             }
         });
     }
