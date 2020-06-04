@@ -1,9 +1,11 @@
 $(document).ready( () => {
     $("#submitButton").click( () => {
         $.get(BuildApiString(), (data, status) => {
+            let allHtml;
             data.officials.forEach(official => {
-                $("#federalOfficers").html(GetOfficerHTML(official));
+                allHtml += GetOfficerHTML(official);
             });
+            $("#federalOfficers").html(allHtml);
         })
     });
     $("#address").on("input", () => {
@@ -24,22 +26,31 @@ function BuildApiString() {
 
 function GetOfficerHTML(official) {
     let returnHTML = `<div>Name:<br>${official.name} <br>URLS:<br>`;
-    official.urls.forEach(url => {
-        returnHTML += `<a href="${url}>${url}</a>`;
-    });
+    if (official.urls != null){
+        official.urls.forEach(url => {
+            returnHTML += `<a href="${url}>${url}</a>`;
+        });
+    }
+    
     returnHTML += "Phone:<br>";
-    official.phones.forEach(phone => {
-        returnHTML += phone + "<br>";
-    });
+    if (official.phones != null){
+        official.phones.forEach(phone => {
+            returnHTML += phone + "<br>";
+        });
+    }
+    
     returnHTML += "Channels:<br>";
-    official.channels.forEach(channel => {
-        if (channel.type == "Facebook"){
-            returnHTML += `<a href="https://facebook.com/${channel.id}>Facebook</a><br>`;
-        }
-        else if (channel.type == "Twitter"){
-            returnHTML += `<a href="https://twitter.com/${channel.id}>Twitter</a><br>`;
-        }
-    });
+    if (official.channels != null) {
+        official.channels.forEach(channel => {
+            if (channel.type == "Facebook"){
+                returnHTML += `<a href="https://facebook.com/${channel.id}>Facebook</a><br>`;
+            }
+            else if (channel.type == "Twitter"){
+                returnHTML += `<a href="https://twitter.com/${channel.id}>Twitter</a><br>`;
+            }
+        });
+    }
+    
     returnHTML += "<br><br></div>";
     return returnHTML;
 }
