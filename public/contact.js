@@ -1,6 +1,6 @@
 $(document).ready( () => {
     $("#submitButton").click( () => {
-        $.get(GetURL(), BuildApiString(), (data, status) => {
+        $.get(BuildApiString(), (data, status) => {
             let allHtml = "";
             data.officials.forEach(official => {
                 allHtml += GetOfficerHTML(official);
@@ -18,13 +18,12 @@ $(document).ready( () => {
     });
 });
 
-function GetURL() {
-    return `https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyDOoCjpX2_v8KmJonjuQHLwCLxBCk8MNK4`;
-}
 
 function BuildApiString() {
-    return `"address":"${$("#address").val()} ${$("#city").val()} ${$("#state").val()} ${$("#zip").val()}"`
-    + `, "roles":"["legislatorLowerBody","legislatorUpperBody"]}`; 
+    return `https://www.googleapis.com/civicinfo/v2/representatives` 
+    + `?address=${$("#address").val()} ${$("#city").val()} ${$("#state").val()} ${$("#zip").val()}`
+    + `&roles=legislatorLowerBody&roles=legislatorUpperBody`
+    + `&key=AIzaSyDOoCjpX2_v8KmJonjuQHLwCLxBCk8MNK4`; 
 }
 
 function GetOfficerHTML(official) {
