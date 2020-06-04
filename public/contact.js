@@ -1,7 +1,7 @@
 $(document).ready( () => {
     $("#submitButton").click( () => {
         $.get(BuildApiString(), (data, status) => {
-            let allHtml;
+            let allHtml = "";
             data.officials.forEach(official => {
                 allHtml += GetOfficerHTML(official);
             });
@@ -32,7 +32,7 @@ function GetOfficerHTML(official) {
         });
     }
     
-    returnHTML += "Phone:<br>";
+    returnHTML += "<br>Phone:<br>";
     if (official.phones != null){
         official.phones.forEach(phone => {
             returnHTML += phone + "<br>";
