@@ -20,7 +20,7 @@ $(document).ready( () => {
 
 function BuildApiString() {
     return `https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyDOoCjpX2_v8KmJonjuQHLwCLxBCk8MNK4&address=`
-    + `{"${$("#address").val()} ${$("#city").val()} ${$("#state").value} ${$("#zip").val()}"`
+    + `{"${$("#address").val()} ${$("#city").val()} ${$("#state").val()} ${$("#zip").val()}"`
     + `,"includeOffices":true, "roles":["legislatorLowerBody","legislatorUpperBody"]}`; 
 }
 
