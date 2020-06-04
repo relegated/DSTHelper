@@ -23,8 +23,7 @@ function GetURL() {
 }
 
 function BuildApiString() {
-    return `{"key":"AIzaSyDOoCjpX2_v8KmJonjuQHLwCLxBCk8MNK4", "address":`
-    + `, "address":"${$("#address").val()} ${$("#city").val()} ${$("#state").val()} ${$("#zip").val()}"`
+    return `"address":"${$("#address").val()} ${$("#city").val()} ${$("#state").val()} ${$("#zip").val()}"`
     + `, "roles":"["legislatorLowerBody","legislatorUpperBody"]}`; 
 }
 
