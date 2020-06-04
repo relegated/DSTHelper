@@ -32,7 +32,7 @@ function GetOfficerHTML(official) {
         returnHTML += phone + "<br>";
     });
     returnHTML += "Channels:<br>";
-    official.returnHTML.forEach(channel => {
+    official.channels.forEach(channel => {
         if (channel.type == "Facebook"){
             returnHTML += `<a href="https://facebook.com/${channel.id}>Facebook</a><br>`;
         }
