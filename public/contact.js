@@ -1,6 +1,6 @@
 $(document).ready( () => {
     $("#submitButton").click( () => {
-        $.get(BuildApiString(), (data, status) => {
+        $.get(GetURL(), BuildApiString(), (data, status) => {
             let allHtml = "";
             data.officials.forEach(official => {
                 allHtml += GetOfficerHTML(official);
@@ -18,10 +18,14 @@ $(document).ready( () => {
     });
 });
 
+function GetURL() {
+    return `https://www.googleapis.com/civicinfo/v2/representatives`;
+}
+
 function BuildApiString() {
-    return `https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyDOoCjpX2_v8KmJonjuQHLwCLxBCk8MNK4&address=`
-    + `"${$("#address").val()} ${$("#city").val()} ${$("#state").val()} ${$("#zip").val()}"`
-    + `&includeOffices="true"&roles="{["legislatorLowerBody","legislatorUpperBody"]}`; 
+    return `{"key":"AIzaSyDOoCjpX2_v8KmJonjuQHLwCLxBCk8MNK4", "address":`
+    + `, "address":"${$("#address").val()} ${$("#city").val()} ${$("#state").val()} ${$("#zip").val()}"`
+    + `, "roles":"["legislatorLowerBody","legislatorUpperBody"]}`; 
 }
 
 function GetOfficerHTML(official) {
