@@ -18,7 +18,8 @@ $(document).ready(() => {
 });
 
 function GetStateWebsiteHTML() {
-    return `<a href="${GetStateWebsite()}">Click Here for additional State Legistlature Information</a>`;
+    return `<div class="alert alert-info"><a href="${GetStateWebsite()} class="alert-link">
+    <strong>Click Here for additional State Legistlature Information for ${$("#state").val().toUpperCase()}</strong></a></div>`;
 }
 
 function GetStateWebsite() {
