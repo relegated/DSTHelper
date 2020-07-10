@@ -200,7 +200,7 @@ function BuildApiString() {
 }
 
 function GetOfficerHTML(official) {
-    let returnHTML = `<div>Name:<br>${official.name} <br>URLS:<br>`;
+    let returnHTML = `<div class="col-md-6"><div class="card"><div class="card-header"><strong>Name: ${official.name}</strong></div><div class="card-body">URLS:<br>`;
     if (official.urls != null) {
         official.urls.forEach(url => {
             returnHTML += `<a href="${url}">${url}</a>`;
@@ -226,6 +226,6 @@ function GetOfficerHTML(official) {
         });
     }
 
-    returnHTML += "<br><br></div>";
+    returnHTML += "<br></div></div></div></div><br>";
     return returnHTML;
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Your Representatives</title>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
@@ -15,59 +15,82 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="well">
-        <h1>Contact Your Representatives</h1>
+    <div class="container">
+        <br>
+        <div class="card">
+            
+                <h1 class="card-title"> Contact Your Representatives</h1>
+            
         </div>
-        <h2>Daylight Saving Time is affected in each state by two groups:
+        <br>
+        <h2><strong>Saving Time is affected in each state by two groups:</strong>
             <ol>
-                <li>United States Congress <small>(currently mandates states either switch twice a year, or stick with Standard
-                    time)</small></li>
-                <li>State Congress <small>(which can elect to switch to standard time, or join national efforts to make DST permanent)</small>
+                <li>United States Congress <small>
+                        <div class="font-italic">(currently mandates states either switch twice a year, or stick with
+                            Standard
+                            time)</div>
+                    </small></li>
+                <li>State Congress <small>
+                        <div class="font-italic">(which can elect to switch to standard time, or join national efforts
+                            to make
+                            DST permanent)</div>
+                    </small>
                 </li>
             </ol>
         </h2>
-        <h3>Let your representatives know that you want to stop switching back and forth <p><small>Fill out this form to find contact information for your representatives:</small></p></h3>
-    <div class="row">
-        <div class="form-group">
-            <div class="col-xs-8">
-            <label for="address">Address: </label>
-            <input type="text" name="address" id="address" class="form-control">
+        <h3>Let your representatives know that you want to stop switching back and forth <p><small>
+                    <div class="font-italic">Fill out this form to
+                        find contact information for your representatives:</div>
+                </small></p>
+        </h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="address">Address: </label>
+                    <input type="text" name="address" id="address" class="form-control">
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-xs-8">
-            <label for="city">City: </label>
-            <input type="text" name="city" id="city"class="form-control">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="city">City: </label>
+                    <input type="text" name="city" id="city" class="form-control">
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-xs-8">
-            <label for="state">State: </label>
-            <input type="text" name="state" id="state"class="form-control">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="state">State: </label>
+                    <input type="text" name="state" id="state" class="form-control">
+                </div>
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-xs-8">
-            <label for="zip">Zip: </label>
-            <input type="number" name="zip" id="zip"class="form-control">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="zip">Zip: </label>
+                    <input type="number" name="zip" id="zip" class="form-control">
+                </div>
             </div>
         </div>
-    </div>
-            <div class="row">
-            <div class="col-xs-4">
-                <br>
-            <button disabled="disabled" id="submitButton" class="btn btn-primary btn-block">Submit</button>
-            </div>
-            </div>
 
-        
-        
-    
+        <div class="row">
+            <div class="col-sm-4">
+                <br>
+                <button disabled="disabled" id="submitButton" class="btn btn-primary btn-block">Submit</button>
+                <br><br>
+            </div>
+        </div>
+
+
+
+
         <p id="federalOfficers"></p>
         <p id="stateWebsite"></p>
     </div>
-   
+
 </body>
 
 </html>
